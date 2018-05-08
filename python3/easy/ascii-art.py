@@ -1,9 +1,6 @@
-l, h, t = [int(input()), int(input()), input()]
+l, h = [int(input()), int(input())]
+t = [ord(c.lower()) - 97 if c.isalpha() else 26 for c in input()]
 
-for i in range(h):
+for _ in range(h):
     row = input()
-    answer = ""
-    for c in t:
-        pos = ord(c.lower()) - 97 if c.isalpha() else 26
-        answer += row[pos * l:(pos + 1) * l]
-    print(answer)
+    print("".join(row[j * l:(j + 1) * l] for j in t))
