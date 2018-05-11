@@ -4,4 +4,4 @@ elevators[f] = p
 
 while True:
     f, p, d = input().split()
-    print(('BLOCK','WAIT')['-' in f or (int(p) - int(elevators[int(f)])) * d.find('I') <= 0])
+    print(("BLOCK","WAIT")["-" in f or (int(p) - int(elevators[int(f)])) * d.find("I") <= 0])
