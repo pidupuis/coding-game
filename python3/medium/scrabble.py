@@ -1,3 +1,4 @@
+import sys
 from collections import Counter
 
 def partial_anagram(a, b):
@@ -20,8 +21,8 @@ dic = [input() for _ in range(int(input()))]
 letters = input()
 
 anagrams = [(compute_score(w), w) for w in dic if partial_anagram(w, letters)]
+max_score = max(anagrams)[0]
 for anagram in anagrams:
-    if anagram[0] == max(anagrams)[0]:
+    if anagram[0] == max_score:
         print(anagram[1])
         break
-
