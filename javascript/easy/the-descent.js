@@ -1,5 +1,5 @@
 while (true) {
-    var mountains = [...Array(8)]
-        .map(n => parseInt(readline()));
+    const mountains = [...Array(8)]
+        .map(() => + readline());
     print(mountains.indexOf(Math.max(...mountains)));
 }
