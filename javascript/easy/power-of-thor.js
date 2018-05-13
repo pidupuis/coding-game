@@ -1,9 +1,9 @@
-[lx, ly, tx, ty] = readline().split(' ').map(n => + n);
+let [lx, ly, tx, ty] = readline().split(' ').map(n => + n);
 
 while (true) {
     + readline();
     
-    var move = '';
+    let move = '';
     if (ly > ty) {
         move = 'S';
         ty++;
