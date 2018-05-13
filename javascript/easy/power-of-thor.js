@@ -3,26 +3,23 @@
 while (true) {
     parseInt(readline())
     
+    var move = ''
     if (ly > ty) {
-        move = "S"
-        ty += 1
+        move = 'S'
+        ty++
     }
     else if (ly < ty) {
-        move = "N"
-        ty -= 1
-    }
-    else {
-        move = ""
+        move = 'N'
+        ty--
     }
 
     if (lx > tx) {
-        move += "E"
-        tx += 1
+        move += 'E'
+        tx++
     }
     else if (lx < tx) {
-        move += "W"
-        tx -= 1
+        move += 'W'
+        tx--
     }
-
     print(move)
 }
