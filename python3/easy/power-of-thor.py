@@ -1,8 +1,8 @@
 lx, ly, tx, ty = [int(i) for i in input().split()]
 
 while True:
-    remaining_turns = int(input())  # The remaining amount of turns Thor can move. Do not remove this line.
-    
+    _ = int(input())
+
     if ly > ty:
         move = "S"
         ty += 1
