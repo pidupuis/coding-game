@@ -1,5 +1,3 @@
 while True:
-    mountains = []
-    for i in range(8):
-        mountains.append(int(input()))
+    mountains = [int(input()) for i in range(8)]
     print(mountains.index(max(mountains)))
