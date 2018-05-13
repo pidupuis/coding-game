@@ -1,15 +1,13 @@
-[N, Q] = [parseInt(readline()), parseInt(readline())];
+const [N, Q] = [+ readline(), + readline()];
 
-var extToMt = [...Array(N)]
-    .map(n => readline())
-    .reduce((r, e) => {
-        r[e.split(' ')[0].toLowerCase()] = e.split(' ')[1];
-        return r;
-    }, {});
+const extToMt = [...Array(N)]
+    .map(() => readline().split(' '))
+    .reduce((r, e) => (
+        Object.assign(r, JSON.parse('{"' + e[0].toLowerCase() + '":"' + e[1] + '"}'))
+    ), {});
 
-[...Array(Q)]
-    .map(n => readline())
-    .map((e) => {
-        var ext = e.indexOf('.') !== -1 ? e.split('.').slice(-1).pop().toLowerCase() : null;
-        print(ext in extToMt ? extToMt[ext] : 'UNKNOWN');
-    });
+print([...Array(Q)]
+    .map(() => readline().toLowerCase().split('.'))
+    .map((f) => f.length > 1 ? f.slice(-1) : null)
+    .map((e) => extToMt[e] || 'UNKNOWN')
+    .join('\n'));
