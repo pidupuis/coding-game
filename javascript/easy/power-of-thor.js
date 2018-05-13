@@ -7,8 +7,7 @@ while (true) {
     if (ly > ty) {
         move = 'S'
         ty++
-    }
-    else if (ly < ty) {
+    } else if (ly < ty) {
         move = 'N'
         ty--
     }
@@ -16,8 +15,7 @@ while (true) {
     if (lx > tx) {
         move += 'E'
         tx++
-    }
-    else if (lx < tx) {
+    } else if (lx < tx) {
         move += 'W'
         tx--
     }
