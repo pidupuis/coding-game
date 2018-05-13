@@ -3,14 +3,13 @@ lx, ly, tx, ty = [int(i) for i in input().split()]
 while True:
     _ = int(input())
 
+    move = ""
     if ly > ty:
         move = "S"
         ty += 1
     elif ly < ty:
         move = "N"
         ty -= 1
-    else:
-        move = ""
 
     if lx > tx:
         move += "E"
@@ -18,5 +17,4 @@ while True:
     elif lx < tx:
         move += "W"
         tx -= 1
-
     print(move)
