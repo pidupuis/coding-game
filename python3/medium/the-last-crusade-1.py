@@ -1,20 +1,21 @@
 from operator import add
 
+l, b, r = (-1, 0), (0, 1), (1, 0)
 move = [
-    {                                                    },
-    { "LEFT": ( 0, 1), "TOP": ( 0, 1), "RIGHT": ( 0, 1), },
-    { "LEFT": ( 1, 0),                 "RIGHT": (-1, 0), },
-    {                  "TOP": ( 0, 1),                   },
-    {                  "TOP": (-1, 0), "RIGHT": ( 0, 1), },
-    { "LEFT": ( 0, 1), "TOP": ( 1, 0),                   },
-    { "LEFT": ( 1, 0),                 "RIGHT": (-1, 0), },
-    {                  "TOP": ( 0, 1), "RIGHT": ( 0, 1), },
-    { "LEFT": ( 0, 1),                 "RIGHT": ( 0, 1), },
-    { "LEFT": ( 0, 1), "TOP": ( 0, 1),                   },
-    {                  "TOP": (-1, 0),                   },
-    {                  "TOP": ( 1, 0),                   },
-    {                                  "RIGHT": ( 0, 1), },
-    { "LEFT": ( 0, 1),                                   },
+    {                                  },
+    { "LEFT": b, "TOP": b, "RIGHT": b, },
+    { "LEFT": r,           "RIGHT": l, },
+    {            "TOP": b,             },
+    {            "TOP": l, "RIGHT": b, },
+    { "LEFT": b, "TOP": r,             },
+    { "LEFT": r,           "RIGHT": l, },
+    {            "TOP": b, "RIGHT": b, },
+    { "LEFT": b,           "RIGHT": b, },
+    { "LEFT": b, "TOP": b,             },
+    {            "TOP": l,             },
+    {            "TOP": r,             },
+    {                      "RIGHT": b, },
+    { "LEFT": b,                       },
 ]
 
 _, h = map(int, input().split())
@@ -24,4 +25,5 @@ _ = int(input())
 while True:
     x, y, pos = input().split()
     x, y = map(int, [x, y])
-    print("%s %s" % tuple(map(add, (x, y), move[rooms[y][x]][pos])))
+    next_move = move[rooms[y][x]][pos]
+    print("%s %s" % tuple(map(add, (x, y), next_move)))
