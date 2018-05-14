@@ -24,6 +24,6 @@ _ = int(input())
 
 while True:
     x, y, pos = input().split()
-    x, y = map(int, [x, y])
+    x, y = int(x), int(y)
     next_move = move[rooms[y][x]][pos]
     print("%s %s" % tuple(map(add, (x, y), next_move)))
