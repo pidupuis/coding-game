@@ -1,4 +1,3 @@
-import sys
 from itertools import groupby
 
 seq = "".join(format(ord(x), "b").zfill(7) for x in input())
