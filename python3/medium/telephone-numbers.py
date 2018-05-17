@@ -24,6 +24,6 @@ class Node():
         return counter
 
 t = Node("")
-for i in range(int(input())):
+for _ in range(int(input())):
     t.add(input())
 print(t.count())
