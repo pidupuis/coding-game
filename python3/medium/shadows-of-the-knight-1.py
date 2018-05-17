@@ -1,19 +1,17 @@
-w, h = map(int, input().split())
-n = int(input())
+x1, y1, x2, y2, _ = [0, 0] + [*map(int, input().split())] + [input()]
 x, y = map(int, input().split())
-gx1, gx2, gy1, gy2 = 0, w - 1, 0, h - 1
 
 while True:
     d = input()
     if "R" in d:
-        gx1 = x + 1
-    if "L" in d:
-        gx2 = x - 1
+        x1 = x + 1
+    elif "L" in d:
+        x2 = x - 1
     if "D" in d:
-        gy1 = y + 1
-    if "U" in d:
-        gy2 = y - 1
+        y1 = y + 1
+    elif "U" in d:
+        y2 = y - 1
 
-    x = (gx1 + gx2) // 2
-    y = (gy1 + gy2) // 2
+    x = (x1 + x2) // 2
+    y = (y1 + y2) // 2
     print(x, y)
