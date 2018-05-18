@@ -8,7 +8,6 @@ p1 = [list(input())[0] for _ in range(int(input()))]
 p2 = [list(input())[0] for _ in range(int(input()))]
 
 i = 0
-match = ""
 war1, war2 = [], []
 while True:
     l = min(len(p1), len(p2))
@@ -22,10 +21,8 @@ while True:
         cards = war1 + [a] + war2 + [b]
         if r:
             p1 += cards
-            match += "1"
         else:
             p2 += cards
-            match += "2"
         war1, war2 = [], []
         i += 1
     else:
@@ -33,7 +30,6 @@ while True:
         p1 = p1[3:]
         war2 += [b] + p2[:3]
         p2 = p2[3:]
-        match += "W"
         if min(len(war1), len(war2)) < 4:
             print("PAT")
             break
