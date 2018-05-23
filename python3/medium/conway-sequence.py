@@ -1,8 +1,10 @@
 from itertools import groupby
 
-r = input().split()
+def next_row(row):
+    for v, g in groupby(row):
+        yield from (sum(1 for _ in g), v)
+
+r = [int(input())]
 for _ in range(int(input())-1):
-    t, r = r, []
-    for k, g in groupby(t):
-        r += [str(len(list(g))), k]
+    r = next_row(r)
 print(*r)
