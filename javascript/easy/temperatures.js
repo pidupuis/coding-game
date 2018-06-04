@@ -2,14 +2,6 @@ readline();
 
 closest = readline()
     .split(' ')
-    .map((n) => + n)
-    .reduce((accumulator, current) => {
-        if (current < 0) {
-            accumulator[0] = Math.max(accumulator[0], current);
-        } else {
-            accumulator[1] = Math.min(accumulator[1], current);
-        }
-        return accumulator;
-    }, [-Infinity, Infinity]);
+    .sort((a, b) => Math.abs(a) - Math.abs(b) || b - a);
 
-print(Math.abs(closest[0]) < closest[1] ? closest[0] : closest[1]);
+print(closest[0] || 0);
