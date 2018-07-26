@@ -1,18 +1,16 @@
 n = int(input())
-h = n * 2
 
-lines = [""] * h
-for i, e in enumerate(range(1, h, 2)):
-    lines[i] = "{}{}".format(
-        " " * (h - i - 1),
-        "*" * e,
-    )
-    lines[i + n] = "{}{}{}{}".format(
-        " " * (n - i - 1),
-        "*" * e,
-        " " * (h - e),
-        "*" * e,
+for i, e in enumerate(range(1, n * 2, 2)):
+    print(
+        "." * (i==0) +
+        " " * ((n * 2) - i - 1 - (i==0)) +
+        "*" * e
     )
 
-lines[0] = ".{}".format(lines[0][1:])
-print("\n".join(lines))
+for i, e in enumerate(range(1, n * 2, 2)):
+    print(
+        " " * (n - i - 1) +
+        "*" * e +
+        " " * ((n * 2) - e) +
+        "*" * e
+    )
