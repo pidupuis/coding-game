@@ -1,17 +1,17 @@
 const N = +readline();
-let price = +readline();
+let C = +readline();
 
-const budgets = [...Array(N)].map(() => +readline()).sort((a, b) => a - b);
-const sum = budgets.reduce((a, b) => a + b, 0);
+const budgets = [...Array(N)].map(readline).map(Number).sort((a, b) => a - b);
 
-if (sum < price) {
+if (budgets.reduce((a, b) => a + b, 0) < C) {
     print('IMPOSSIBLE');
 } else {
-    while(budgets.length) {
-        const d = Math.floor(price / budgets.length);
-        const b = budgets.shift();
-        const res = d > b ? b : d;
-        price -= res;
-        print(res);
-    }
+    print(budgets
+        .reduce((r, e, i, a) => {
+            const d = Math.floor((C - r.reduce((a, b) => a + b, 0)) / (a.length - r.length));
+            r.push(d > e ? e : d);
+            return r;
+        }, [])
+        .join('\n')
+    );
 }
